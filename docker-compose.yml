@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  db:
+    image: mariadb:10.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: admin
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
