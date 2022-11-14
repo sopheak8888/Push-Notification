@@ -1,14 +1,13 @@
 version: "3.7"
 services:
   db:
-    image: mariadb:10.4
+    image: postgres:14
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123
-      MYSQL_DATABASE: admin
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 123
+      POSTGRES_DB: admin
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - ./db:/var/lib/mysql
+      - ./data:/var/lib/postgresql/data
